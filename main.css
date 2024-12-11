@@ -105,6 +105,22 @@
   font-size: 14px;
 
 }
+.tg-testimonial-slider-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+}
+
+
+.tg-testimonial-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  line-height: 1.5; 
+  min-height: 5em; 
   /* Responsive behavior */
   @media (max-width: 767px) {
       .language-selector {
