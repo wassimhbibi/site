@@ -72,7 +72,30 @@
 		});
 	});
 
-
+	document.getElementById('language-select').addEventListener('change', function () {
+		const selectedLanguage = this.value; // Get the selected language
+		const translatableElements = document.querySelectorAll('[data-en]'); // Select all elements with translations
+	  
+		// Update text content for each translatable element
+		translatableElements.forEach(element => {
+		  const translation = element.getAttribute(`data-${selectedLanguage}`);
+		  if (translation) {
+			element.textContent = translation;
+		  }
+		});
+	  });
+	  function switchLanguage(language) {
+		const menuItems = document.querySelectorAll('.navigation a');
+		menuItems.forEach(item => {
+		  // Update the text based on the selected language
+		  item.textContent = item.getAttribute(`data-${language}`);
+		});
+	  }
+	
+	  // Set default language to English on page load
+	  document.addEventListener('DOMContentLoaded', () => {
+		switchLanguage('en');
+	  });
 	/*=============================================
 		=    		Mobile Menu			      =
 	=============================================*/
